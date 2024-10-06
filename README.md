@@ -37,4 +37,22 @@ This process may take a few minutes depending on your machine and will generate 
 
 ## Test
 
+You can run tests either on the **JVM** or natively. Keep in mind that running tests only on the JVM might lead to issues if the API is later deployed as a native executable. If you're planning to use a native version of this project, it is highly recommended to include native tests in your CI/CD pipeline to ensure compatibility and stability.
+
+### Tests in the JVM
+
+To execute the tests on the JVM, use the following command:
+
+```bash
+make test
+```
+
+### Native tests
+
+For native testing, use the following command:
+
+```bash
+make test-native
+```
+
 ## Execution
