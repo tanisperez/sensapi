@@ -53,6 +53,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>sensapi</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.graalvm.buildtools</groupId>
