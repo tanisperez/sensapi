@@ -35,11 +35,11 @@ make build-native
 
 This process may take a few minutes depending on your machine and will generate the file `target/sensapi`.
 
-## Test
+## Testing
 
 You can run tests either on the **JVM** or natively. Keep in mind that running tests only on the JVM might lead to issues if the API is later deployed as a native executable. If you're planning to use a native version of this project, it is highly recommended to include native tests in your CI/CD pipeline to ensure compatibility and stability.
 
-### Tests in the JVM
+### Running Tests on the JVM
 
 To execute the tests on the JVM, use the following command:
 
@@ -47,7 +47,7 @@ To execute the tests on the JVM, use the following command:
 make test
 ```
 
-### Native tests
+### Running Native Tests
 
 For native testing, use the following command:
 
@@ -56,3 +56,23 @@ make test-native
 ```
 
 ## Execution
+
+While **SensAPI** can be executed on the JVM, running it natively offers better performance, with faster startup times and reduced memory consumption.
+
+### Running on the JVM
+
+To execute **SensAPI** on the JVM, type:
+
+```bash
+make run
+```
+
+### Running Natively
+
+For native executions, use the following command:
+
+```bash
+make run-native
+```
+
+Running **SensAPI** natively leverages the advantages of native compilation for optimal performance.
