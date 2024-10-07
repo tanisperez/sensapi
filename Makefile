@@ -18,5 +18,8 @@ test:
 test-native:
 	$(MAVEN) test -PnativeTest
 
+docker-compose:
+	docker-compose up -d
+
 clean:
 	$(MAVEN) clean
