@@ -5,5 +5,5 @@
   ___) ||  __/| | | |\__ \ / ___ \ |  __/ | |
  |____/  \___||_| |_||___//_/   \_\|_|   |___|
 
- :: Version :: ${info.app.version}
+ :: Version :: ${spring.application.version}
  :: Spring Boot :: ${spring-boot.version}
