@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-public class PageRequestTest {
+class PageRequestTest {
 
     @Test
     @DisplayName("Should create a PageRequest")

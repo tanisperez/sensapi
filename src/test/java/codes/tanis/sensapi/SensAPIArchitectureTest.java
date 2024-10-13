@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static com.tngtech.archunit.base.DescribedPredicate.alwaysTrue;
 import static com.tngtech.archunit.core.domain.properties.HasName.Predicates.nameMatching;
 
-public class SensAPIArchitectureTest {
+class SensAPIArchitectureTest {
 
     @Test
     @DisplayName("Hexagonal architecture rules")

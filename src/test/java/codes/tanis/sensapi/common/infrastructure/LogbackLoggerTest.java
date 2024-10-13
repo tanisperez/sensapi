@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class LogbackLoggerTest {
+class LogbackLoggerTest {
 
     @Test
     @DisplayName("Log as info level")

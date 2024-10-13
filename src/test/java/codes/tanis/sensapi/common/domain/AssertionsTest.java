@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-public class AssertionsTest {
+class AssertionsTest {
 
     @Test
     @DisplayName("Should fail the assertion")
