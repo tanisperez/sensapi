@@ -16,10 +16,10 @@ public class PageRequestTest {
         final PageRequest pageRequest = new PageRequest(3, 25);
 
         assertThat(pageRequest.page()).isEqualTo(3);
-        assertThat(pageRequest.count()).isEqualTo(25);
+        assertThat(pageRequest.size()).isEqualTo(25);
     }
 
-    @ParameterizedTest(name = "page = {0}, count = {1}, error = {2}")
+    @ParameterizedTest(name = "page = {0}, size = {1}, error = {2}")
     @DisplayName("Should throw an IllegalArgumentException")
     @CsvSource({
         "0,10,Page number could no be lower than 1",
@@ -27,8 +27,8 @@ public class PageRequestTest {
         "3,4,The number of records to fetch could not be lower than 10",
         "3,150,The number of records to fetch could not be higher than 100",
     })
-    public void should_throw_exception(int page, int count, String expectedErrorMessage) {
-        assertThatThrownBy(() -> new PageRequest(page, count))
+    public void should_throw_exception(int page, int size, String expectedErrorMessage) {
+        assertThatThrownBy(() -> new PageRequest(page, size))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(expectedErrorMessage);
     }
