@@ -4,29 +4,28 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class StringsTest {
 
     @Test
-    @DisplayName("isEmpty")
-    public void is_empty() {
-        assertThat(Strings.isEmpty(null)).isTrue();
-        assertThat(Strings.isEmpty("")).isTrue();
-        assertThat(Strings.isEmpty(" ")).isFalse();
-        assertThat(Strings.isEmpty("    ")).isFalse();
-        assertThat(Strings.isEmpty("Hello")).isFalse();
+    @DisplayName("isNullOrEmpty")
+    public void is_null_or_empty() {
+        assertThat(Strings.isNullOrEmpty(null)).isTrue();
+        assertThat(Strings.isNullOrEmpty("")).isTrue();
+        assertThat(Strings.isNullOrEmpty(" ")).isFalse();
+        assertThat(Strings.isNullOrEmpty("    ")).isFalse();
+        assertThat(Strings.isNullOrEmpty("Hello")).isFalse();
     }
 
     @Test
-    @DisplayName("isBlank")
-    public void is_blank() {
-        assertThat(Strings.isBlank(null)).isTrue();
-        assertThat(Strings.isBlank("")).isTrue();
-        assertThat(Strings.isBlank(" ")).isTrue();
-        assertThat(Strings.isBlank("    ")).isTrue();
-        assertThat(Strings.isBlank("  Hello")).isFalse();
-        assertThat(Strings.isBlank("  Hello     ")).isFalse();
+    @DisplayName("isNullOrBlank")
+    public void is_null_or_blank() {
+        assertThat(Strings.isNullOrBlank(null)).isTrue();
+        assertThat(Strings.isNullOrBlank("")).isTrue();
+        assertThat(Strings.isNullOrBlank(" ")).isTrue();
+        assertThat(Strings.isNullOrBlank("    ")).isTrue();
+        assertThat(Strings.isNullOrBlank("  Hello")).isFalse();
+        assertThat(Strings.isNullOrBlank("  Hello     ")).isFalse();
     }
 
 }

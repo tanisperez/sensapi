@@ -6,11 +6,11 @@ public final class Strings {
         // Do nothing
     }
 
-    public static boolean isEmpty(final String text) {
+    public static boolean isNullOrEmpty(final String text) {
         return text == null || text.isEmpty();
     }
 
-    public static boolean isBlank(final String text) {
+    public static boolean isNullOrBlank(final String text) {
         return text == null || text.isBlank();
     }
 
