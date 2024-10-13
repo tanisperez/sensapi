@@ -22,10 +22,10 @@ class PageRequestTest {
     @ParameterizedTest(name = "page = {0}, size = {1}, error = {2}")
     @DisplayName("Should throw an IllegalArgumentException")
     @CsvSource({
-        "0,10,Page number could no be lower than 1",
-        "-5,10,Page number could no be lower than 1",
-        "3,4,The number of records to fetch could not be lower than 10",
-        "3,150,The number of records to fetch could not be higher than 100",
+        "0,10,Page number must be 1 or greater",
+        "-5,10,Page number must be 1 or greater",
+        "3,4,The number of records to fetch must be 10 or greater",
+        "3,150,The number of records to fetch must not exceed 100",
     })
     public void should_throw_exception(int page, int size, String expectedErrorMessage) {
         assertThatThrownBy(() -> new PageRequest(page, size))

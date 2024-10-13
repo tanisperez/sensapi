@@ -10,8 +10,8 @@ public record PageRequest (
     private static final int MAX_COUNT = 100;
 
     public PageRequest {
-        asserts(() -> page >= 1, "Page number could no be lower than 1");
-        asserts(() -> size >= MIN_COUNT, "The number of records to fetch could not be lower than " + MIN_COUNT);
-        asserts(() -> size <= MAX_COUNT, "The number of records to fetch could not be higher than " + MAX_COUNT);
+        asserts(() -> page >= 1, "Page number must be 1 or greater");
+        asserts(() -> size >= MIN_COUNT, "The number of records to fetch must be " + MIN_COUNT + " or greater");
+        asserts(() -> size <= MAX_COUNT, "The number of records to fetch must not exceed " + MAX_COUNT);
     }
 }
