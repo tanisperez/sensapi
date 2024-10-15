@@ -21,4 +21,14 @@ class ListsTest {
         assertThat(Lists.isNullOrEmpty(Arrays.asList("a", "b", "c"))).isFalse();
     }
 
+    @Test
+    @DisplayName("isNotNullOrEmpty")
+    public void is_not_null_or_empty() {
+        assertThat(Lists.isNotNullOrEmpty(null)).isFalse();
+        assertThat(Lists.isNotNullOrEmpty(List.of())).isFalse();
+        assertThat(Lists.isNotNullOrEmpty(new ArrayList<String>())).isFalse();
+        assertThat(Lists.isNotNullOrEmpty(List.of(1, 2, 3))).isTrue();
+        assertThat(Lists.isNotNullOrEmpty(Arrays.asList("a", "b", "c"))).isTrue();
+    }
+
 }

@@ -12,4 +12,8 @@ public final class Lists {
         return list == null || list.isEmpty();
     }
 
+    public static <T> boolean isNotNullOrEmpty(final List<T> list) {
+        return !isNullOrEmpty(list);
+    }
+
 }
