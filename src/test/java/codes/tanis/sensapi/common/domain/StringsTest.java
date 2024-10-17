@@ -18,14 +18,35 @@ class StringsTest {
     }
 
     @Test
+    @DisplayName("isNotEmpty")
+    void is_not_empty() {
+        assertThat(Strings.isNotEmpty(null)).isFalse();
+        assertThat(Strings.isNotEmpty("")).isFalse();
+        assertThat(Strings.isNotEmpty(" ")).isTrue();
+        assertThat(Strings.isNotEmpty("    ")).isTrue();
+        assertThat(Strings.isNotEmpty("Hello")).isTrue();
+    }
+
+    @Test
     @DisplayName("isBlank")
-    void is_nblank() {
+    void is_blank() {
         assertThat(Strings.isBlank(null)).isTrue();
         assertThat(Strings.isBlank("")).isTrue();
         assertThat(Strings.isBlank(" ")).isTrue();
         assertThat(Strings.isBlank("    ")).isTrue();
         assertThat(Strings.isBlank("  Hello")).isFalse();
         assertThat(Strings.isBlank("  Hello     ")).isFalse();
+    }
+
+    @Test
+    @DisplayName("isNotBlank")
+    void is_not_blank() {
+        assertThat(Strings.isNotBlank(null)).isFalse();
+        assertThat(Strings.isNotBlank("")).isFalse();
+        assertThat(Strings.isNotBlank(" ")).isFalse();
+        assertThat(Strings.isNotBlank("    ")).isFalse();
+        assertThat(Strings.isNotBlank("  Hello")).isTrue();
+        assertThat(Strings.isNotBlank("  Hello     ")).isTrue();
     }
 
 }

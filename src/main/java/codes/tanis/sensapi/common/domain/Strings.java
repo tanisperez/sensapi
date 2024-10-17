@@ -10,8 +10,16 @@ public final class Strings {
         return text == null || text.isEmpty();
     }
 
+    public static boolean isNotEmpty(final String text) {
+        return !isEmpty(text);
+    }
+
     public static boolean isBlank(final String text) {
         return text == null || text.isBlank();
+    }
+
+    public static boolean isNotBlank(final String text) {
+        return !isBlank(text);
     }
 
 }
