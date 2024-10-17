@@ -1,6 +1,6 @@
 package codes.tanis.sensapi.sensor.domain;
 
-import org.apache.logging.log4j.util.Strings;
+import codes.tanis.sensapi.common.domain.Strings;
 
 import java.time.LocalDateTime;
 
