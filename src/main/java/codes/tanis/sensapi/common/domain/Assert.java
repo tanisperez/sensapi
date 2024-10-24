@@ -1,8 +1,8 @@
 package codes.tanis.sensapi.common.domain;
 
-public final class Asserts {
+public final class Assert {
 
-    private Asserts() {
+    private Assert() {
         // Do nothing
     }
 

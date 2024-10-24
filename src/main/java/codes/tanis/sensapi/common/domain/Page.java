@@ -10,9 +10,9 @@ public final class Page<T> {
     private final long totalPages;
 
     public Page(final List<T> content, final PageRequest pageRequest, final long totalElements) {
-        Asserts.that(() -> content != null, "Page content must not be null or empty");
-        Asserts.that(() -> pageRequest != null, "Page request must not be null");
-        Asserts.that(() -> totalElements > 0, "Total elements must be greater than 0");
+        Assert.that(() -> content != null, "Page content must not be null or empty");
+        Assert.that(() -> pageRequest != null, "Page request must not be null");
+        Assert.that(() -> totalElements > 0, "Total elements must be greater than 0");
 
         this.content = Collections.unmodifiableList(content);
         this.pageRequest = pageRequest;

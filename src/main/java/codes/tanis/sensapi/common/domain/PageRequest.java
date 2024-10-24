@@ -8,8 +8,8 @@ public record PageRequest (
     private static final int MAX_COUNT = 100;
 
     public PageRequest {
-        Asserts.that(() -> page >= 1, "Page number must be 1 or greater");
-        Asserts.that(() -> size >= MIN_COUNT, "The number of records to fetch must be " + MIN_COUNT + " or greater");
-        Asserts.that(() -> size <= MAX_COUNT, "The number of records to fetch must not exceed " + MAX_COUNT);
+        Assert.that(() -> page >= 1, "Page number must be 1 or greater");
+        Assert.that(() -> size >= MIN_COUNT, "The number of records to fetch must be " + MIN_COUNT + " or greater");
+        Assert.that(() -> size <= MAX_COUNT, "The number of records to fetch must not exceed " + MAX_COUNT);
     }
 }
