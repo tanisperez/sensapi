@@ -1,12 +1,12 @@
 package codes.tanis.sensapi.common.domain;
 
-public final class Assertions {
+public final class Asserts {
 
-    private Assertions() {
+    private Asserts() {
         // Do nothing
     }
 
-    public static void asserts(final Assertion assertion, final String errorMessage) {
+    public static void that(final Assertion assertion, final String errorMessage) {
         if (assertion.isFalse()) {
             throw new IllegalArgumentException(errorMessage);
         }

@@ -1,8 +1,8 @@
 package codes.tanis.sensapi.sensor.domain;
 
-import java.util.regex.Pattern;
+import codes.tanis.sensapi.common.domain.Asserts;
 
-import static codes.tanis.sensapi.common.domain.Assertions.asserts;
+import java.util.regex.Pattern;
 
 public final class Mac {
 
@@ -12,8 +12,8 @@ public final class Mac {
     private final String address;
 
     public Mac(final String address) {
-        asserts(() -> address != null, "The MAC address must not be null");
-        asserts(() -> MAC_ADDRESS_PATTERN.matcher(address).matches(), "Invalid MAC address. Use the format XX:XX:XX:XX:XX:XX, with hexadecimal pairs (0-9, A-F)");
+        Asserts.that(() -> address != null, "The MAC address must not be null");
+        Asserts.that(() -> MAC_ADDRESS_PATTERN.matcher(address).matches(), "Invalid MAC address. Use the format XX:XX:XX:XX:XX:XX, with hexadecimal pairs (0-9, A-F)");
         this.address = address.toUpperCase();
     }
 
