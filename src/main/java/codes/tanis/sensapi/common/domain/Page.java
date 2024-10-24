@@ -12,7 +12,7 @@ public final class Page<T> {
     private final long totalPages;
 
     public Page(final List<T> content, final PageRequest pageRequest, final long totalElements) {
-        asserts(() -> Lists.isNotNullOrEmpty(content), "Page content must not be null or empty");
+        asserts(() -> content != null, "Page content must not be null or empty");
         asserts(() -> pageRequest != null, "Page request must not be null");
         asserts(() -> totalElements > 0, "Total elements must be greater than 0");
 
