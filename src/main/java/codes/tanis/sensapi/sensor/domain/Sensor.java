@@ -13,9 +13,9 @@ public record Sensor(
     private static final int MAX_NAME_LENGTH = 30;
 
     public Sensor {
-        Assert.that(() -> mac != null, "The MAC address must not be null");
+        Assert.notNull(mac, "The MAC address must not be null");
         Assert.that(() -> Strings.isNotBlank(name), "The sensor name must not be null or blank");
         Assert.that(() -> name.length() <= MAX_NAME_LENGTH, "Sensor name must be shorter than " + MAX_NAME_LENGTH + " characters");
-        Assert.that(() -> registrationDate != null, "The registration date must not be null");
+        Assert.notNull(registrationDate, "The registration date must not be null");
     }
 }

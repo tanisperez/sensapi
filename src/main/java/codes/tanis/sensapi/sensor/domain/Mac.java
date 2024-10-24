@@ -12,7 +12,7 @@ public final class Mac {
     private final String address;
 
     public Mac(final String address) {
-        Assert.that(() -> address != null, "The MAC address must not be null");
+        Assert.notNull(address, "The MAC address must not be null");
         Assert.that(() -> MAC_ADDRESS_PATTERN.matcher(address).matches(), "Invalid MAC address. Use the format XX:XX:XX:XX:XX:XX, with hexadecimal pairs (0-9, A-F)");
         this.address = address.toUpperCase();
     }
