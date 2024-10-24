@@ -12,6 +12,12 @@ public final class Assert {
         }
     }
 
+    public static void notNull(final Object object, final String errorMessage) {
+        if (object == null) {
+            throw new IllegalArgumentException(errorMessage);
+        }
+    }
+
     @FunctionalInterface
     public interface Assertion {
 
