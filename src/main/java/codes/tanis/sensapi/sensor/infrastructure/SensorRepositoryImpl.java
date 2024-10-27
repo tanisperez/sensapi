@@ -6,7 +6,7 @@ import codes.tanis.sensapi.sensor.domain.Sensor;
 import codes.tanis.sensapi.sensor.domain.SensorRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import static codes.tanis.sensapi.common.domain.Todo.TODO;
+import java.util.List;
 
 public class SensorRepositoryImpl implements SensorRepository {
 
@@ -18,8 +18,7 @@ public class SensorRepositoryImpl implements SensorRepository {
 
     @Override
     public Page<Sensor> findSensors(PageRequest pageRequest) {
-        TODO("Not yet implemented");
-        return null;
+        return new Page<>(List.of(), pageRequest, 0);
     }
 
 }
