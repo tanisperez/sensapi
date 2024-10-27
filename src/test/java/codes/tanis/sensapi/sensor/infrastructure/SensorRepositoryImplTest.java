@@ -21,8 +21,8 @@ class SensorRepositoryImplTest {
 
     @BeforeEach
     void setUp() {
-        jdbcTemplate.execute("DROP SCHEMA IF EXISTS sensapi CASCADE");
-        jdbcTemplate.execute("CREATE SCHEMA IF NOT EXISTS sensapi");
+        jdbcTemplate.execute("DROP SCHEMA IF EXISTS SENSAPI CASCADE");
+        jdbcTemplate.execute("CREATE SCHEMA IF NOT EXISTS SENSAPI");
         jdbcTemplate.execute("""
             CREATE TABLE SENSAPI.SENSOR (
                 mac CHAR(17) PRIMARY KEY,
@@ -47,10 +47,24 @@ class SensorRepositoryImplTest {
         assertThat(results.totalPages()).isEqualTo(0);
     }
 
-    // @Test
+    @Test
     @DisplayName("find first page of sensors")
-    void another_test() {
-        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (MAC, NAME) VALUES ('3A:45:9B:2C:18', 'ESP-32 Patio')");
+    void find_first_page() {
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:14:22:01:23:45', 'Sensor_Temperatura_1')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:16:36:02:46:58', 'Sensor_Humedad_1')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:18:64:03:59:69', 'Sensor_Presion_1')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:1A:79:04:12:89', 'Sensor_Temperatura_2')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:1C:85:05:25:92', 'Sensor_Humedad_2')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:1E:48:06:33:14', 'Sensor_Presion_2')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:20:7B:07:44:27', 'Sensor_Temperatura_3')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:22:4D:08:57:38', 'Sensor_Humedad_3')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:24:13:09:67:41', 'Sensor_Presion_3')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:26:85:10:79:52', 'Sensor_Temperatura_4')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:28:93:11:81:66', 'Sensor_Humedad_4')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:2A:57:12:94:72', 'Sensor_Presion_4')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:2C:63:13:16:85', 'Sensor_Temperatura_5')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:2E:4A:14:28:98', 'Sensor_Humedad_5')");
+        jdbcTemplate.execute("INSERT INTO SENSAPI.SENSOR (mac, name) VALUES ('00:30:5F:15:39:10', 'Sensor_Presion_5')");
 
         PageRequest pageRequest = new PageRequest(1, 10);
         SensorRepository sensorRepository = new SensorRepositoryImpl(jdbcTemplate);
