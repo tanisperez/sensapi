@@ -12,7 +12,7 @@ public final class Page<T> {
     public Page(final List<T> content, final PageRequest pageRequest, final long totalElements) {
         Assert.notNull(content, "Page content must not be null or empty");
         Assert.notNull(pageRequest, "Page request must not be null");
-        Assert.that(() -> totalElements > 0, "Total elements must be greater than 0");
+        Assert.that(() -> totalElements >= 0, "Total elements must not be negative");
 
         this.content = Collections.unmodifiableList(content);
         this.pageRequest = pageRequest;

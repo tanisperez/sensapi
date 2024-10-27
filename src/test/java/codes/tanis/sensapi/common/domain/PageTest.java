@@ -81,9 +81,9 @@ class PageTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("Page request must not be null");
 
-        assertThatThrownBy(() -> new Page<>(List.of(1, 2, 3, 4), new PageRequest(1, 10), 0L))
+        assertThatThrownBy(() -> new Page<>(List.of(1, 2, 3, 4), new PageRequest(1, 10), -1L))
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage("Total elements must be greater than 0");
+            .hasMessage("Total elements must not be negative");
     }
 
 }
