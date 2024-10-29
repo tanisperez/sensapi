@@ -58,7 +58,6 @@ public class FindSensorsRepositoryImpl implements FindSensorsRepository {
         String mac = resultSet.getString("MAC");
         String name = resultSet.getString("NAME");
         Timestamp registrationDate = resultSet.getTimestamp("REGISTRATION_DATE");
-        long rowNumber = resultSet.getLong("ROW_NUMBER");
         long totalRows = resultSet.getLong("TOTAL_ROWS");
         return new SensorEntity(mac, name, registrationDate.toLocalDateTime(), totalRows);
     }
