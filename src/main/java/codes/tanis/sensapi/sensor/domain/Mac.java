@@ -4,12 +4,10 @@ import codes.tanis.sensapi.common.domain.Assert;
 
 import java.util.regex.Pattern;
 
-public final class Mac {
+public record Mac(String address) {
 
     private static final String MAC_ADDRESS_REGEX = "^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$";
     private static final Pattern MAC_ADDRESS_PATTERN = Pattern.compile(MAC_ADDRESS_REGEX);
-
-    private final String address;
 
     public Mac(final String address) {
         Assert.notNull(address, "The MAC address must not be null");
@@ -17,21 +15,4 @@ public final class Mac {
         this.address = address.toUpperCase();
     }
 
-    public String address() {
-        return address;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Mac mac = (Mac) o;
-        return address.equals(mac.address);
-    }
-
-    @Override
-    public int hashCode() {
-        return address.hashCode();
-    }
 }
