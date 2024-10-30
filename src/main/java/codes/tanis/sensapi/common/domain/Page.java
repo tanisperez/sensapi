@@ -20,19 +20,19 @@ public final class Page<T> {
         this.totalPages = Math.ceilDiv(this.totalElements, this.pageRequest.size());
     }
 
-    public List<T> content() {
+    public List<T> getContent() {
         return content;
     }
 
-    public PageRequest pageRequest() {
+    public PageRequest getPageRequest() {
         return pageRequest;
     }
 
-    public long totalElements() {
+    public long getTotalElements() {
         return totalElements;
     }
 
-    public long totalPages() {
+    public long getTotalPages() {
         return totalPages;
     }
 }

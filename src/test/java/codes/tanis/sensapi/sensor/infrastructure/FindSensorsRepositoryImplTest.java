@@ -44,10 +44,10 @@ class FindSensorsRepositoryImplTest {
         Page<Sensor> results = findSensorsRepository.findSensors(pageRequest);
 
         assertThat(results).isNotNull();
-        assertThat(results.content().size()).isZero();
-        assertThat(results.pageRequest()).isEqualTo(pageRequest);
-        assertThat(results.totalElements()).isEqualTo(0);
-        assertThat(results.totalPages()).isEqualTo(0);
+        assertThat(results.getContent().size()).isZero();
+        assertThat(results.getPageRequest()).isEqualTo(pageRequest);
+        assertThat(results.getTotalElements()).isEqualTo(0);
+        assertThat(results.getTotalPages()).isEqualTo(0);
     }
 
     @Test
@@ -74,16 +74,16 @@ class FindSensorsRepositoryImplTest {
         Page<Sensor> results = findSensorsRepository.findSensors(pageRequest);
 
         assertThat(results).isNotNull();
-        assertThat(results.content().size()).isEqualTo(10);
-        assertThat(results.content().getFirst().mac()).isEqualTo(new Mac("00:14:22:01:23:45"));
-        assertThat(results.content().getFirst().name()).isEqualTo("Sensor_Temperature_1");
-        assertThat(results.content().getFirst().registrationDate()).isBefore(LocalDateTime.now());
-        assertThat(results.content().getLast().mac()).isEqualTo(new Mac("00:26:85:10:79:52"));
-        assertThat(results.content().getLast().name()).isEqualTo("Sensor_Temperature_4");
-        assertThat(results.content().getLast().registrationDate()).isBefore(LocalDateTime.now());
-        assertThat(results.pageRequest()).isEqualTo(pageRequest);
-        assertThat(results.totalElements()).isEqualTo(15);
-        assertThat(results.totalPages()).isEqualTo(2);
+        assertThat(results.getContent().size()).isEqualTo(10);
+        assertThat(results.getContent().getFirst().mac()).isEqualTo(new Mac("00:14:22:01:23:45"));
+        assertThat(results.getContent().getFirst().name()).isEqualTo("Sensor_Temperature_1");
+        assertThat(results.getContent().getFirst().registrationDate()).isBefore(LocalDateTime.now());
+        assertThat(results.getContent().getLast().mac()).isEqualTo(new Mac("00:26:85:10:79:52"));
+        assertThat(results.getContent().getLast().name()).isEqualTo("Sensor_Temperature_4");
+        assertThat(results.getContent().getLast().registrationDate()).isBefore(LocalDateTime.now());
+        assertThat(results.getPageRequest()).isEqualTo(pageRequest);
+        assertThat(results.getTotalElements()).isEqualTo(15);
+        assertThat(results.getTotalPages()).isEqualTo(2);
     }
 
     @Test
@@ -122,16 +122,16 @@ class FindSensorsRepositoryImplTest {
         Page<Sensor> results = findSensorsRepository.findSensors(pageRequest);
 
         assertThat(results).isNotNull();
-        assertThat(results.content().size()).isEqualTo(10);
-        assertThat(results.content().getFirst().mac()).isEqualTo(new Mac("00:28:93:11:81:66"));
-        assertThat(results.content().getFirst().name()).isEqualTo("Sensor_Humidity_4");
-        assertThat(results.content().getFirst().registrationDate()).isBefore(LocalDateTime.now());
-        assertThat(results.content().getLast().mac()).isEqualTo(new Mac("00:3A:B4:20:75:59"));
-        assertThat(results.content().getLast().name()).isEqualTo("Sensor_Humidity_7");
-        assertThat(results.content().getLast().registrationDate()).isBefore(LocalDateTime.now());
-        assertThat(results.pageRequest()).isEqualTo(pageRequest);
-        assertThat(results.totalElements()).isEqualTo(27);
-        assertThat(results.totalPages()).isEqualTo(3);
+        assertThat(results.getContent().size()).isEqualTo(10);
+        assertThat(results.getContent().getFirst().mac()).isEqualTo(new Mac("00:28:93:11:81:66"));
+        assertThat(results.getContent().getFirst().name()).isEqualTo("Sensor_Humidity_4");
+        assertThat(results.getContent().getFirst().registrationDate()).isBefore(LocalDateTime.now());
+        assertThat(results.getContent().getLast().mac()).isEqualTo(new Mac("00:3A:B4:20:75:59"));
+        assertThat(results.getContent().getLast().name()).isEqualTo("Sensor_Humidity_7");
+        assertThat(results.getContent().getLast().registrationDate()).isBefore(LocalDateTime.now());
+        assertThat(results.getPageRequest()).isEqualTo(pageRequest);
+        assertThat(results.getTotalElements()).isEqualTo(27);
+        assertThat(results.getTotalPages()).isEqualTo(3);
     }
 
     @Test
@@ -170,16 +170,16 @@ class FindSensorsRepositoryImplTest {
         Page<Sensor> results = findSensorsRepository.findSensors(pageRequest);
 
         assertThat(results).isNotNull();
-        assertThat(results.content().size()).isEqualTo(7);
-        assertThat(results.content().getFirst().mac()).isEqualTo(new Mac("00:3C:C6:21:86:60"));
-        assertThat(results.content().getFirst().name()).isEqualTo("Sensor_Pressure_7");
-        assertThat(results.content().getFirst().registrationDate()).isBefore(LocalDateTime.now());
-        assertThat(results.content().getLast().mac()).isEqualTo(new Mac("00:48:61:27:54:26"));
-        assertThat(results.content().getLast().name()).isEqualTo("Sensor_Pressure_9");
-        assertThat(results.content().getLast().registrationDate()).isBefore(LocalDateTime.now());
-        assertThat(results.pageRequest()).isEqualTo(pageRequest);
-        assertThat(results.totalElements()).isEqualTo(27);
-        assertThat(results.totalPages()).isEqualTo(3);
+        assertThat(results.getContent().size()).isEqualTo(7);
+        assertThat(results.getContent().getFirst().mac()).isEqualTo(new Mac("00:3C:C6:21:86:60"));
+        assertThat(results.getContent().getFirst().name()).isEqualTo("Sensor_Pressure_7");
+        assertThat(results.getContent().getFirst().registrationDate()).isBefore(LocalDateTime.now());
+        assertThat(results.getContent().getLast().mac()).isEqualTo(new Mac("00:48:61:27:54:26"));
+        assertThat(results.getContent().getLast().name()).isEqualTo("Sensor_Pressure_9");
+        assertThat(results.getContent().getLast().registrationDate()).isBefore(LocalDateTime.now());
+        assertThat(results.getPageRequest()).isEqualTo(pageRequest);
+        assertThat(results.getTotalElements()).isEqualTo(27);
+        assertThat(results.getTotalPages()).isEqualTo(3);
     }
 
 }

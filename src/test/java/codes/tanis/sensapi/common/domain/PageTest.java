@@ -18,11 +18,11 @@ class PageTest {
 
         final Page<String> page = new Page<>(content, pageRequest, 5);
 
-        assertThat(page.content()).isEqualTo(content);
-        assertThat(page.content()).isNotSameAs(content);
-        assertThat(page.pageRequest()).isSameAs(pageRequest);
-        assertThat(page.totalElements()).isEqualTo(5);
-        assertThat(page.totalPages()).isEqualTo(1);
+        assertThat(page.getContent()).isEqualTo(content);
+        assertThat(page.getContent()).isNotSameAs(content);
+        assertThat(page.getPageRequest()).isSameAs(pageRequest);
+        assertThat(page.getTotalElements()).isEqualTo(5);
+        assertThat(page.getTotalPages()).isEqualTo(1);
     }
 
     @Test
@@ -33,11 +33,11 @@ class PageTest {
 
         final Page<Integer> page = new Page<>(content, pageRequest, 20);
 
-        assertThat(page.content()).isEqualTo(content);
-        assertThat(page.content()).isNotSameAs(content);
-        assertThat(page.pageRequest()).isSameAs(pageRequest);
-        assertThat(page.totalElements()).isEqualTo(20);
-        assertThat(page.totalPages()).isEqualTo(2);
+        assertThat(page.getContent()).isEqualTo(content);
+        assertThat(page.getContent()).isNotSameAs(content);
+        assertThat(page.getPageRequest()).isSameAs(pageRequest);
+        assertThat(page.getTotalElements()).isEqualTo(20);
+        assertThat(page.getTotalPages()).isEqualTo(2);
     }
 
     @Test
@@ -48,11 +48,11 @@ class PageTest {
 
         final Page<Integer> page = new Page<>(content, pageRequest, 43);
 
-        assertThat(page.content()).isEqualTo(content);
-        assertThat(page.content()).isNotSameAs(content);
-        assertThat(page.pageRequest()).isSameAs(pageRequest);
-        assertThat(page.totalElements()).isEqualTo(43);
-        assertThat(page.totalPages()).isEqualTo(5);
+        assertThat(page.getContent()).isEqualTo(content);
+        assertThat(page.getContent()).isNotSameAs(content);
+        assertThat(page.getPageRequest()).isSameAs(pageRequest);
+        assertThat(page.getTotalElements()).isEqualTo(43);
+        assertThat(page.getTotalPages()).isEqualTo(5);
     }
 
     @Test
@@ -63,11 +63,11 @@ class PageTest {
 
         final Page<String> page = new Page<>(content, pageRequest, (25 * 2) + 5);
 
-        assertThat(page.content()).isEqualTo(content);
-        assertThat(page.content()).isNotSameAs(content);
-        assertThat(page.pageRequest()).isSameAs(pageRequest);
-        assertThat(page.totalElements()).isEqualTo(55);
-        assertThat(page.totalPages()).isEqualTo(3);
+        assertThat(page.getContent()).isEqualTo(content);
+        assertThat(page.getContent()).isNotSameAs(content);
+        assertThat(page.getPageRequest()).isSameAs(pageRequest);
+        assertThat(page.getTotalElements()).isEqualTo(55);
+        assertThat(page.getTotalPages()).isEqualTo(3);
     }
 
     @Test
