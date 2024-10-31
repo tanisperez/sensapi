@@ -7,10 +7,37 @@ on:
     branches: [ "*" ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:20.10.7
+        options: --privileged  # This allow to use Docker in Docker
+        ports:
+          - 2375:2375
+        env:
+          DOCKER_HOST: tcp://localhost:2375
+
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v3
-    - name: Run tests inside Docker image
-      run: docker build -f .github/workflows/test.Dockerfile -t solpor/solpor:latest .
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Run Tests
+        run: ./mvnw test
+        env:
+          DOCKER_HOST: tcp://localhost:2375
+
